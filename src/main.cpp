@@ -29,7 +29,7 @@ L298N leftMotor(EN, LEFT_MOTOR_DIR_PIN, LEFT_MOTOR_SPEED_PIN);
 double ROLL = 0;
 double PITCH = 0;
 
-double TARGET_ROLL = 0;
+double TARGET_PITCH = 0;
 
 int RIGHT_MOTOR_SPEED = 0;
 int LEFT_MOTOR_SPEED = 0;
@@ -46,16 +46,10 @@ void setSpeed(L298N motor, int speed) {
 
 void pidController(void *pvParameters __attribute__((unused))) {
     while (true) {
-        double angelDiff = ROLL - TARGET_ROLL;
+        double angelDiff = PITCH - TARGET_PITCH;
 
-        if(kalAngleY > 0) {
-          setSpeed(rightMotor, T * angelDiff);
-          setSpeed(leftMotor, T * angelDiff);
-        }
-        else {
-          setSpeed(rightMotor, T * angelDiff * -1);
-          setSpeed(leftMotor, T * angelDiff * -1);
-        }
+        setSpeed(rightMotor, T * angelDiff);
+        setSpeed(leftMotor, T * angelDiff);
     }
 }
 
