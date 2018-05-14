@@ -48,8 +48,14 @@ void pidController(void *pvParameters __attribute__((unused))) {
     while (true) {
         double angelDiff = ROLL - TARGET_ROLL;
 
-        setSpeed(rightMotor, T * angelDiff);
-        setSpeed(leftMotor, T * angelDiff);
+        if(kalAngleY > 0) {
+          setSpeed(rightMotor, T * angelDiff);
+          setSpeed(leftMotor, T * angelDiff);
+        }
+        else {
+          setSpeed(rightMotor, T * angelDiff * -1);
+          setSpeed(leftMotor, T * angelDiff * -1);
+        }
     }
 }
 
