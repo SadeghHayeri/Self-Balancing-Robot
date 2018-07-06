@@ -7,9 +7,9 @@ Arduino Self balancing robot
 
 Students
 --------
-Milad Hakimi
-Sahar Rajabi
-Sadegh Hayeri
+* Milad Hakimi
+* Sahar Rajabi
+* Sadegh Hayeri
 
 Repo structure
 --------------
