@@ -1,5 +1,6 @@
 Self Balancing Robot
 ======
+# ![pageres](images/IMG_2967.png)
 
 Real-Time and Embedded Systems Course
 Arduino Self balancing robot
